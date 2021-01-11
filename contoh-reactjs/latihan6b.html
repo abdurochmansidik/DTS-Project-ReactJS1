@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+
+<body>
+    <!--- Buat id untuk menampilkan hasil pemrosesan yang dilakukan oleh reactJs -->
+    <div id="hasil"></div>
+</body>
+
+    <!-- Sematkan library reactJs yang di import melalui CDN -->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <!-- Tulis kode reactJS disini -->
+    <script type="text/babel">
+        function Max (props) {
+           let a = parseInt(props.bil1);
+           let b = parseInt(props.bil2);
+           let c = parseInt(props.bil3);
+           let max = -99;
+           // if ((a > b) && (a > c)) {
+           //    max = a;
+           // }
+           // else if ((b > a) && (b > c)) {
+           //    max = b;
+           // }
+           // else {
+           //    max = c;
+           // }
+
+           if (a > max) {
+               max = a;
+           }
+           if (b > max) {
+               max = b;
+           }
+           if (c > max) {
+               max = c;
+           }
+           return (
+                <p>
+                Nilai Max dari 3 buah bilangan: {a}, {b}, {c} adalah {max}
+                </p>
+
+           );
+        }
+        function ElemenHTML () {
+            return (
+                <div>
+                   <h1>Nilai Max</h1>
+                   <Max bill="11" bil2="3" bil3="4" />
+                </div>
+            );
+        }
+        ReactDOM.render(<ElemenHTML/>, hasil);
+    </script>
+
+</html>

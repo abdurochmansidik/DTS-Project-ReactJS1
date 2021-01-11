@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+
+<body>
+    <!--- Buat id untuk menampilkan hasil pemrosesan yang dilakukan oleh reactJs -->
+    <div id="hasil"></div>
+</body>
+
+    <!-- Sematkan library reactJs yang di import melalui CDN -->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <!-- Tulis kode reactJS disini -->
+    <script type="text/babel">
+        function Mhs (props) {
+            return (
+                <p>
+                NIM : {props.nim} <br/>
+                Nama : {props.nama} <br/>
+                Jenis Kelamin : {props.jkel == "L" ? "Laki-Laki" : "Perempuan"} <br/>
+                Umur : {props.umur} <br/>
+                Jurusan : {props.jur} <br/>
+                Angkatan : {props.angkt} <hr/>
+                </p>
+            );
+        }
+        function ElemenHTML () {
+            return (
+                <div>
+                    <h1>Biodata Mahasiswa</h1>
+                    <Mhs nim="002" nama="A Sidik" jkel="L" umur={17} jur="Informatika"
+                    angkt="2019"/>
+                    <Mhs nim="003" nama="A Iskandar" jkel="L" umur={18} jur="Informatika"
+                    angkt="2019"/>
+                    <Mhs nim="004" nama="A Wahid" jkel="L" umur={19} jur="Informatika"
+                    angkt="2019"/>
+                </div>
+            );
+        }
+        ReactDOM.render(<ElemenHTML/>, hasil);
+    </script>
+
+</html>

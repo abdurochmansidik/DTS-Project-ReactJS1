@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+</head>
+
+<body>
+    <!--- Buat id untuk menampilkan hasil pemrosesan yang dilakukan oleh reactJs -->
+    <div id="hasil"></div>
+</body>
+
+    <!-- Sematkan library reactJs yang di import melalui CDN -->
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <!-- Tulis kode reactJS disini -->
+    <script type="text/babel">
+        const hasil = document.getElementById('hasil');
+        const elemenHTML = <h1>Apa kabar Dunia ttp asik</h1>
+        ReactDOM.render(elemenHTML, hasil);
+    </script>
+
+</html>
